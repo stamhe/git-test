@@ -11,6 +11,7 @@ int main(){
     printf("v5\n");
     printf("v6\n");
     printf("v7\n");
+    printf("v8\n");
     printf("last one\n");
     return 0;
 }
