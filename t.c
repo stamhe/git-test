@@ -9,6 +9,7 @@ int main(){
     printf("20131008212700\n");
     printf("v4\n");
     printf("v5\n");
+    printf("v6\n");
     printf("last one\n");
     return 0;
 }
