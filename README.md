@@ -15,6 +15,7 @@
 
 [新浪微博](http://weibo.com/stam0 "stamhe")
 ![](http://ww2.sinaimg.cn/large/6745c397jw1e9oh0535dxj20go0rstd6.jpg)
+![](https://raw.github.com/stamhe/test1/master/1.jpg)
 ===
 #### 无序列表
 - 列表1
