@@ -10,6 +10,14 @@
 >       printf("main\n");
 >     }
 
+____
+#### 另外一种代码方式
+<pre>
+  #include <stdio.h>
+  int main(){
+    printf("main\n");
+  }
+</pre>
 ===
 链接
 
