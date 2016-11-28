@@ -1,6 +1,7 @@
 ### github及git使用测试
 ===
 #### markdown测试数据，无实际意义
+[Markdown 入门参考](https://github.com/stamhe/Learning-Markdown 'Markdown 入门参考')
 #### 引用
 > 不仅有失散海外的兄弟，难道还有失散在西藏的姐妹？
 
