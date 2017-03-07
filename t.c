@@ -19,5 +19,6 @@ int main(){
     printf("last one\n");
     printf("from stam0\n");
     printf("from stam0 2\n");
+    printf("from stam1\n");
     return 0;
 }
