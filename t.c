@@ -17,5 +17,7 @@ int main(){
     printf("v12\n");
     printf("v13\n");
     printf("last one\n");
+    printf("from stam0\n");
+    printf("from stam0 2\n");
     return 0;
 }
