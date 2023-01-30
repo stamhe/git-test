@@ -63,4 +63,4 @@ jobs:
       - name: job3-secret
         shell: bash
         run: |
-          echo "password: ${{secret.PASS}}"
+          echo "password: ${{secrets.PASS}}"
