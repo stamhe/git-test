@@ -15,4 +15,40 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: "master"
+          
+      - name: job1-shell-test
+        id: job1-shell-test-id
+        shell: bash
+        run: |
+          ls -al
+
+      - name: job1-get-output
+        shell: bash
+        run: |
+          echo "job1-shell-test outputs: ${{steps.job1-shell-test-id.outputs}}"
+          
+  job_id_2:
+    name: job_id_2_name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: job2-pwd
+        shell: bash
+        run: |
+          pwd
+
+      - name: job2-mkdir
+        shell: bash
+        run: |
+          mkdir -p ~/data1/data2
+
+      - name: job2-cd
+        shell: bash
+        run: |
+          cd ~/data1/data2 && pwd
+
+      - name: job2-pwd-2
+        shell: bash
+        run: |
+          pwd
 
