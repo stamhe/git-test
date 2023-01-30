@@ -11,11 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: job1-set-env
-        env:
-          MY_VAR1: 'xxoo1'
-          MY_VAR2: 'ooxx2'
-
       - name: job1-checkout-test
         uses: actions/checkout@v3
         with:
