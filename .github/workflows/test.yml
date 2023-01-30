@@ -12,6 +12,7 @@ env:
   env1: "Hello Shanghai"
 
 jobs:
+  # 第三方 actions
   job_id_1:
     name: job_id_1_name
     runs-on: ubuntu-latest
@@ -33,6 +34,7 @@ jobs:
         run: |
           echo "job1-shell-test outputs: ${{steps.job1-shell-test-id.outputs}}"
 
+  # shell 命令
   job_id_2:
     name: job_id_2_name
     runs-on: ubuntu-latest
@@ -48,15 +50,16 @@ jobs:
         run: |
           mkdir -p ~/data1/data2
 
-      - name: job2-touch-file
-        shell: bash
-        run: |
-          touch t.txt && echo 'hello' > t.txt
-
       - name: job2-cd
         shell: bash
         run: |
-          cd ~/data1/data2 && pwd && cd ~
+          cd ~/data1/data2 && pwd
+
+      - name: job2-touch-file
+        shell: bash
+        run: |
+          cd ~ && touch t.txt && echo 'hello' > t.txt
+
 
       - name: job2-pwd-2
         shell: bash
@@ -66,8 +69,9 @@ jobs:
       - name: job2-ls
         shell: bash
         run: |
-          ls -al
+          cd ~ && ls -al
 
+  # 环境变量
   job_id_3:
     name: job_id_3_name
     runs-on: ubuntu-latest
@@ -92,4 +96,25 @@ jobs:
         run: |
           echo "env1: $env1, env2: $env2, env3: $env3"
 
+  # 输出捕获
+  job_id_4:
+    name: job_id_4_name
+    runs-on: ubuntu-latest
 
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
+
+    steps:
+      - id: step1
+        run: echo "test=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "test=world" >> $GITHUB_OUTPUT
+
+  job_id_5:
+    runs-on: ubuntu-latest
+    needs: job_id_4
+    steps:
+      - name: job1-get-output
+        run: |
+          echo "${{needs.job_id_4.outputs.output1}} ${{needs.job_id_4.outputs.output2}}"
