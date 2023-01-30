@@ -14,19 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: job1-set-env
-        env:
-          MY_VAR1: 'xxoo1'
-          MY_VAR2: 'ooxx2'
-
       - name: job1-checkout-test
         uses: actions/checkout@v3
+        with:
+          ref: 'master'   # branch, tag, sha to checkout
 
       - name: job1-shell-test
         id: job1-shell-test-id
         shell: bash
         run: |
-          echo "MY_VAR1: ${MY_VAR1} MY_VAR2: ${MY_VAR2}"
+          ls -al
 
       - name: job1-get-output
         shell: bash
@@ -57,3 +54,13 @@ jobs:
         shell: bash
         run: |
           pwd
+
+  job_id_3:
+    name: job_id_3_name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: job3-secret
+        shell: bash
+        run: |
+          echo "password: ${{secret.PASS}}"
