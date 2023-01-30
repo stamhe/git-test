@@ -1,0 +1,35 @@
+name: Github-Action-Demo
+on: 
+  push:
+    branches:
+      - master
+      - main
+
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  job_id_1:
+    name: job_id_1_name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: job1-set-env
+        env:
+          MY_VAR1: 'xxoo1'
+          MY_VAR2: 'ooxx2'
+
+      - name: job1-checkout-test
+        uses: actions/checkout@v3
+
+      - name: job1-shell-test
+        id: job1-shell-test-id
+        shell: bash
+        run: |
+          echo "MY_VAR1: ${MY_VAR1} MY_VAR2: ${MY_VAR2}"
+
+      - name: job1-get-output
+        shell: bash
+        run: |
+          echo "job1-shell-test outputs: ${{steps.job1-shell-test-id.outputs}}"
+
