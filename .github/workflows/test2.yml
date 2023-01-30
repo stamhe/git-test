@@ -1,0 +1,18 @@
+name: Github-Action-test2
+on: 
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  job_id_1:
+    name: job_id_1_name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: job1-checkout-test
+        uses: actions/checkout@v3
+        with:
+          ref: "master"
+
