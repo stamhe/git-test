@@ -15,8 +15,6 @@ jobs:
   job_id_1:
     name: job_id_1_name
     runs-on: ubuntu-latest
-    env:
-      env2: "Hello China"
 
     steps:
       - name: job1-checkout-test
@@ -58,7 +56,7 @@ jobs:
       - name: job2-cd
         shell: bash
         run: |
-          cd ~/data1/data2 && pwd
+          cd ~/data1/data2 && pwd && cd ~
 
       - name: job2-pwd-2
         shell: bash
@@ -73,6 +71,8 @@ jobs:
   job_id_3:
     name: job_id_3_name
     runs-on: ubuntu-latest
+    env:
+      env2: "Hello China"
 
     steps:
       - name: job3-secret
@@ -87,6 +87,8 @@ jobs:
 
       - name: job3-env
         shell: bash
+        env:
+          env3: "Hello World"
         run: |
           echo "env1: $env1, env2: $env2, env3: $env3"
 
