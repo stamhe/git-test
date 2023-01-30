@@ -5,8 +5,8 @@ on:
       - master
       - main
 
-  schedule:
-    - cron: '0 * * * *'
+  # schedule:
+  #   - cron: '0 * * * *'
 
 jobs:
   job_id_1:
