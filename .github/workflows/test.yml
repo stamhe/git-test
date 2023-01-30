@@ -125,9 +125,10 @@ jobs:
     name: job_id_6_name
     runs-on: ubuntu-latest
     steps:
+      # 需要权限的命令需要加 sudo , linux && macos
       - name: job1-apt-rsync-git
         run: |
-          apt install -y rsync git 
+          sudo apt install -y rsync git
 
       - name: job2-version
         run: |
