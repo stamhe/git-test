@@ -112,9 +112,27 @@ jobs:
         run: echo "test=world" >> $GITHUB_OUTPUT
 
   job_id_5:
+    name: job_id_5_name
     runs-on: ubuntu-latest
     needs: job_id_4
     steps:
       - name: job1-get-output
         run: |
           echo "${{needs.job_id_4.outputs.output1}} ${{needs.job_id_4.outputs.output2}}"
+
+  # apt
+  job_id_6:
+    name: job_id_6_name
+    runs-on: ubuntu-latest
+    steps:
+      - name: job1-apt-rsync-git
+        run: |
+          apt install -y rsync git 
+
+      - name: job2-version
+        run: |
+          rsync --version && git --version
+
+      - name: job3-lsb
+        run: |
+          lsb_release  -a
