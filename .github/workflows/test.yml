@@ -8,10 +8,15 @@ on:
   # schedule:
   #   - cron: '0 * * * *'
 
+env:
+  env1: "Hello Shanghai"
+
 jobs:
   job_id_1:
     name: job_id_1_name
     runs-on: ubuntu-latest
+    env:
+      env2: "Hello China"
 
     steps:
       - name: job1-checkout-test
@@ -45,6 +50,11 @@ jobs:
         run: |
           mkdir -p ~/data1/data2
 
+      - name: job2-touch-file
+        shell: bash
+        run: |
+          touch t.txt && echo 'hello' > t.txt
+
       - name: job2-cd
         shell: bash
         run: |
@@ -55,6 +65,11 @@ jobs:
         run: |
           pwd
 
+      - name: job2-ls
+        shell: bash
+        run: |
+          ls -al
+
   job_id_3:
     name: job_id_3_name
     runs-on: ubuntu-latest
@@ -64,3 +79,15 @@ jobs:
         shell: bash
         run: |
           echo "password: ${{secrets.PASS}}"
+
+      - name: job3-variable
+        shell: bash
+        run: |
+          echo "VAR_1: ${{vars.VAR_1}} VAR_2: ${{vars.VAR_2}}"
+
+      - name: job3-env
+        shell: bash
+        run: |
+          echo "env1: $env1, env2: $env2, env3: $env3"
+
+
