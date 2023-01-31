@@ -79,7 +79,8 @@ jobs:
       - name: job2-tree
         shell: bash
         run: |
-          cd ~ && pwd && tree -a
+          # cd ~ && pwd && tree -a
+          cd ~ && pwd
 
   # 环境变量
   job_id_3:
