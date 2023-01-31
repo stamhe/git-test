@@ -18,6 +18,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: job1-env
+        shell: bash
+        run: |
+          env
+          
       - name: job1-checkout-test
         uses: actions/checkout@v3
         with:
