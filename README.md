@@ -1,5 +1,6 @@
 ### github及git使用测试
-===
+
+
 #### markdown测试数据，无实际意义
 [Markdown 入门参考](https://github.com/stamhe/Learning-Markdown 'Markdown 入门参考')
 #### 引用
@@ -27,7 +28,8 @@ ____
     printf("main\n");
   }
 </pre>
-===
+
+----
 链接
 
 [新浪微博](http://weibo.com/stam0 "stamhe")
