@@ -30,7 +30,7 @@ ____
 </pre>
 
 ----
-链接
+
 
 [新浪微博](http://weibo.com/stam0 "stamhe")
 
