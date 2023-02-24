@@ -5,14 +5,22 @@
 #### 引用
 > 不仅有失散海外的兄弟，难道还有失散在西藏的姐妹？
 
-#### 包含代码
+#### 代码块
+
+```shell
+#!/bin/bash
+echo $0
+echo "Hello World"
+```
+
+#### 代码块
 >     #include <stdio.h>
 >     int main(){
 >       printf("main\n");
 >     }
 
 ____
-#### 另外一种代码方式
+#### 代码块
 <pre>
   #include <stdio.h>
   int main(){
